@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Iutw
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# iutw-tp04-02
+Trabajo Práctico 04-02 de Interfaces de Usuario y Tecnologías Web - Universidad Nacional del Oeste
+>>>>>>> ff9b2c3f7eeb08c92ea608e8fda2d124f9e082a3
