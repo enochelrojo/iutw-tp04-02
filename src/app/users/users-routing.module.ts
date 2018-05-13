@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule }             from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserslistComponent } from './userslist/userslist.component';
+import { UserslistComponent }   from './userslist/userslist.component';
+import { UserdetailComponent }  from './userdetail/userdetail.component';
 
 const routes: Routes = [
 {
@@ -11,6 +12,10 @@ const routes: Routes = [
     path: '', 
     redirectTo: '/users-list', 
     pathMatch: 'full'
+},
+{
+    path: 'user-detail/:id', 
+    component: UserdetailComponent
 }
 ];
 

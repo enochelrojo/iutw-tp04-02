@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material';
 
 import { UserslistComponent } from './userslist/userslist.component';
+import { UserdetailComponent } from './userdetail/userdetail.component';
 import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
@@ -12,10 +13,12 @@ import { UsersRoutingModule } from './users-routing.module';
     MatCardModule
   ],
   declarations: [
-    UserslistComponent
+    UserslistComponent,
+    UserdetailComponent
   ],
   exports: [
-    UserslistComponent
+    UserslistComponent,
+    UserdetailComponent
   ]
 })
 

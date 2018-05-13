@@ -7,7 +7,7 @@
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Id</th>
+					<th>ID</th>
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Avatar</th>
@@ -15,10 +15,10 @@
 			</thead>
 			<tbody>
 				<tr *ngFor='let user of users'>
-					<td>{{ user.id }}</td>
+					<td><a href="/user-detail/{{ user.id }}" title="">{{ user.id }}</a></td>
 					<td>{{ user.nombre }}</td>
 					<td>{{ user.apellido }}</td>
-					<td><img src="{{user.avatar}}"></td>
+					<td><img src="{{ user.avatar }}"></td>
 				</tr>
 			</tbody>
 		</table>

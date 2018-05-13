@@ -16,10 +16,9 @@ export class UserslistComponent implements OnInit {
 
   ngOnInit() {
   	this.fetchUsers();
-
   }
 
-  fetchUsers(){
+  fetchUsers() {
   	//this.fetchPromise()
   	this.dao.getUsers().subscribe(userdata => {
   		this.users.push(userdata) ;

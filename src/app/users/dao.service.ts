@@ -9,11 +9,13 @@ import { map, switchMap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DaoService {
 
-	private url= 'https://reqres.in/api/users?page=1&per_page=10'
-  
-  constructor(
+	private url = 'https://reqres.in/api/users?page=1&per_page=10'
+    private urlUsuarioSimple = 'https://reqres.in/api/users/2';
+
+    constructor(
 	  	// inyección de dependencias: http es un servicio
 	  	// provisto HttpClientModule, definido en el root-module
 	  	private http: HttpClient
@@ -46,7 +48,22 @@ export class DaoService {
 	  					};
   				return u})
   	);
+  }
 
+  getUser() : Observable<User> {
+    return this.http.get(this.urlUsuarioSimple).pipe(
+        switchMap(respuesta => from(respuesta['data'] as Array<any>)),
+        map(x => {
+            let usuario = {
+                id: x['id'], 
+                nombre: x['first_name'], 
+                apellido: x['last_name'], 
+                avatar: x['avatar']
+            };
+
+            return usuario;
+        })        
+    );
   }
 
   getUsersPromise(){
