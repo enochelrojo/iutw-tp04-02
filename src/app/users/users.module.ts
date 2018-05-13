@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material';
 
-import { UsersRoutingModule } from './users-routing.module';
 import { UserslistComponent } from './userslist/userslist.component';
+import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
   imports: [
@@ -18,4 +18,5 @@ import { UserslistComponent } from './userslist/userslist.component';
     UserslistComponent
   ]
 })
+
 export class UsersModule { }

@@ -19,7 +19,7 @@ export class DaoService {
 	  	private http: HttpClient
   	) { }
 
-  getUsers():Observable<User>{
+  getUsers():Observable<User> {
   	/****
   	*  this.http.get(url) devuelve un Observable,
   	*  pero antes de retornarlo lo hacemos pasar por
