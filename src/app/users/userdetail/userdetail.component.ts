@@ -10,7 +10,7 @@ import { DaoService }                        from '../dao.service';
 
 
 export class UserdetailComponent implements OnInit {
-    public usuario = [];
+    public usuario = {};
 
     constructor(
         private ruta: ActivatedRoute, 
@@ -24,7 +24,7 @@ export class UserdetailComponent implements OnInit {
 
     fetchUser(id : number) {
         this.dao.getUser(id).subscribe(userdata => {
-            this.usuario.push(userdata);
+            this.usuario = userdata['data'];
             console.log(this.usuario);
         })
     }

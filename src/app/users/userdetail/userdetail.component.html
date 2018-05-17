@@ -2,10 +2,10 @@
     <h3>Detalle de un usuario</h3>
     <table class="table table-bordered">            
         <tr>
-            <td>{{ user[0].id }}</td>
-            <td>{{ user[0].nombre }}</td>
-            <td>{{ user[0].apellido }}</td>
-            <td><img src="{{ user[0].avatar }}"></td>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.first_name }}</td>
+            <td>{{ usuario.last_name }}</td>
+            <td><img src="{{ usuario.avatar }}"></td>
         </tr>
     </table>
     <p>Haga clic <a [routerLink]="['/users-list']">aquí para volver</a> a la lista de usuarios</p>
