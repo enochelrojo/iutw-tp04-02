@@ -15,9 +15,9 @@ import { UsersModule } from './users/users.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     UsersModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

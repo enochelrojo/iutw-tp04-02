@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DaoService} from '../dao.service';
 
 
-@Component({
+@Component({ 
   selector: 'userslist',
   templateUrl: './userslist.component.html',
   styleUrls: ['./userslist.component.css']
@@ -19,7 +19,6 @@ export class UserslistComponent implements OnInit {
   }
 
   fetchUsers() {
-  	//this.fetchPromise()
   	this.dao.getUsers().subscribe(userdata => {
   		this.users.push(userdata) ;
   		console.log('USERS [%s]',this.users.length);
@@ -36,11 +35,10 @@ export class UserslistComponent implements OnInit {
 
 }
 
+
 interface User {
 	id: string;
 	nombre: string;
 	apellido: string;
 	avatar: string;
 }
-
-

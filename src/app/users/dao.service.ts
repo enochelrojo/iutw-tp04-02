@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, from } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, tap } from 'rxjs/operators';
 
 // esta anotación hace que dao.service 
 // sea gestionado por el root-injector.
@@ -13,7 +13,7 @@ import { map, switchMap } from 'rxjs/operators';
 export class DaoService {
 
 	private url = 'https://reqres.in/api/users?page=1&per_page=10'
-    private urlUsuarioSimple = 'https://reqres.in/api/users/2';
+    private urlUsuarioSimple = 'https://reqres.in/api/users/';
 
     constructor(
 	  	// inyección de dependencias: http es un servicio
@@ -49,25 +49,16 @@ export class DaoService {
   				return u})
   	);
   }
-
-  getUser() : Observable<User> {
-    return this.http.get(this.urlUsuarioSimple).pipe(
-        switchMap(respuesta => from(respuesta['data'] as Array<any>)),
-        map(x => {
-            let usuario = {
-                id: x['id'], 
-                nombre: x['first_name'], 
-                apellido: x['last_name'], 
-                avatar: x['avatar']
-            };
-
-            return usuario;
-        })        
+  
+ 
+  getUser(id : number) : Observable<User> {
+    return this.http.get<User>(this.urlUsuarioSimple + id).pipe(
+        tap(_ => console.log('Se obtuvo el usuario con ID ' + id))
     );
   }
 
   getUsersPromise(){
-  	return this.http.get(this.url)
+  	return this.http.get(this.urlUsuarioSimple)
 	  	.toPromise()
 	  	.catch(error => {});
   }

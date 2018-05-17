@@ -1,3 +1,12 @@
-<p>
-  userdetail works!
-</p>
+<section id="user-detail">
+    <h3>Detalle de un usuario</h3>
+    <table class="table table-bordered">            
+        <tr>
+            <td>{{ user[0].id }}</td>
+            <td>{{ user[0].nombre }}</td>
+            <td>{{ user[0].apellido }}</td>
+            <td><img src="{{ user[0].avatar }}"></td>
+        </tr>
+    </table>
+    <p>Haga clic <a [routerLink]="['/users-list']">aquí para volver</a> a la lista de usuarios</p>
+</section>
